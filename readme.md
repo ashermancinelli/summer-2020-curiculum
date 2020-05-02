@@ -1,0 +1,21 @@
+
+# Summer 2020 Curriculum
+
+As. 1:
+
+- matplotlib, k-means, scikit learn
+
+```python
+from numpy import array
+from scipy.cluster.vq import vq, kmeans, whiten
+import matplotlib.pyplot as plt
+features  = array([[ 1.9,2.3],
+                   [ 1.5,2.5],
+                   [ 0.8,0.6],
+                   [ 0.4,1.8],
+                   [ 0.1,0.1],
+                   [ 0.2,1.8],
+                   [ 2.0,0.5],
+                   [ 0.3,1.5],
+                   [ 1.0,1.0]])
+```
