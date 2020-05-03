@@ -8,6 +8,7 @@
   - Plotting
   - Autoregression
   - Fitting a model
+- as?: Ensemble Methods
 - as?: MNIST Dense Network
   - NN Fundamentals
   - Visualization
