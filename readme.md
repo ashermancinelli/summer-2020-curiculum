@@ -1,5 +1,42 @@
 
 # Summer 2020 Curriculum
 
-- as1: familiarity with the field and tools that we will use
-- as2: SVM and K-means methods for classification
+- as1: Introduction
+  - Data manipulation
+  - Solving Simple Linear Systems
+- as2: Autoregressive Models
+  - Plotting
+  - Autoregression
+  - Fitting a model
+- as?: MNIST Dense Network
+  - NN Fundamentals
+  - Visualization
+  - Linear Algebra
+  - Introduction to libraries:
+    - Pytorch
+    - Keras
+    - Tensorflow
+    - caffe2
+- as?: MNIST Conv2d Network
+  - Convolution
+  - Linear Algebra cont.
+- as?: CUDA and Other Accelorators
+  - Compilation
+  - Physical Layout of a Graphics Card
+  - Host/Device Memory
+  - Simple Kernels (saxpy)
+  - How these concepts are applied in ML settings
+- as?: Gaussian Procceses
+  - Deciding on a kernel
+  - Using an accelorator
+- as?: Student Selected Conv2d Network
+  - CIFAR10 for example
+  - Apply techniques learned in previous conv lessons
+- as?: Student Selected Gaussian Process Model
+  - Stock market dataset for example
+- Final Project
+  - self-selected dataset
+  - attempt to fit with 3 or more models
+  - compare situations in which each would be best suited
+  - formal write-up on experience in the course
+  - three possible thesis topics from ML/Signal Processing domain
