@@ -96,4 +96,36 @@ if __name__ == '__main__':
         'Ax - b = \n\n'
        f'{A} {x} - {b} = \n\n'
        f'{A @ x} - {b} = \n\n'
-       f'{A @ x - b}')
+       f'{A @ x - b}\n')
+
+    '''
+    Try to regress over the following relationship:
+
+    Ax = b where
+
+        | 0  1.1  |
+        | 1  0    |
+    A = | 0  -0.2 |
+
+            | 1.1  |
+            | -1.1 |
+    and b = | -.2  |
+    '''
+
+    '''
+    When you are ready, uncomment these lines and
+    compute the least squares yourself.
+
+    A = []
+    b = []
+    if not np.allclose(A @ x - b, [ 0, 0, 0 ]):
+        print('Nope! Your solution is not close enough.')
+        exit(1)
+
+    else:
+        print(f'Solution: {x}\n\n'
+            'Ax - b = \n\n'
+           f'{A} {x} - {b} = \n\n'
+           f'{A @ x} - {b} = \n\n'
+           f'{A @ x - b}')
+    '''
