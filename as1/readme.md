@@ -10,3 +10,7 @@ how to use some common libraries.
 Please make note of what you understand and what you don't. Perhaps write down some
 questions that you have and some explanations for what you do understand.
 
+`matmul.py` contains some examples of computing least-squares over a relationshiop.
+There you will also find your first assignment. I don't expect it to be challanging,
+so please take your time and experiment often. Attempt to complete the challange at the
+end of the script.
