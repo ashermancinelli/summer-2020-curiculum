@@ -9,6 +9,10 @@
   - Autoregression
   - Fitting a model
 - as?: Ensemble Methods
+  - K-Nearest Neighbors
+  - Logistic Regression
+  - Voting Classifier
+  - Random Forest 
 - as?: MNIST Dense Network
   - NN Fundamentals
   - Visualization
