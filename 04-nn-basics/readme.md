@@ -7,7 +7,7 @@ before starting the lesson.
 We will start our neural network journel with the smallest element of a neural network:
 *the perceptron*.
 
-![Perceptron](https://www.google.com/search?q=perceptron&sxsrf=ALeKk024K1ac5v7P9VhZN97YbCFE79Nmuw:1588559944169&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjnvLT5lpnpAhWzoFsKHT1_ABUQ_AUoAnoECBUQBA&biw=1280&bih=689#imgrc=S4urUXdXX7jJNM)
+![Perceptron](https://akashsethi24.files.wordpress.com/2017/09/perceptron.png?resize=385%2C254)
 
 ```python
 network = models.Sequential()
