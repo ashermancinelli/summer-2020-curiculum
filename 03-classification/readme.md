@@ -63,6 +63,7 @@ tree classifier.
     random_state=0)
   ```
   Collect metrics and compare your results. Perhaps try an ensemble method and another classifier.
+  
 3. Can you beat Adaboost? Find another dataset online and construct an ensemble method. Pick classifiers
   that you think would work well together and construct an ensemble classifier out of it. Fit both models
   to the data and record which one performs better. Try tuning the parameters of the models to see what changes.
