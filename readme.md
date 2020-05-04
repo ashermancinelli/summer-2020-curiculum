@@ -8,7 +8,7 @@
   - Plotting
   - Autoregression
   - Fitting a model
-- as?: Ensemble Methods
+- as?: More Statistic Inference Methods
   - K-Nearest Neighbors
   - Logistic Regression
   - Voting Classifier
