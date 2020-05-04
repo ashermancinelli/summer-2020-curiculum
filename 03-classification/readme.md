@@ -50,6 +50,9 @@ tree classifier.
 
 ### Problems
 
+1. Play with the parameters to each of the classifiers in `classify.py`. How does AdaBoost perform when
+    you only give it one estimator? 500? What about the gamma and C values for your SVM classifier?
+    Research what these terms mean and how you might tune them depending on your model's performance.
 1. Choose another model from [this link](https://scikit-learn.org/stable/supervised_learning.html)
   and fit it to the iris dataset. How does it compare to the SVM? When should you use the model you
   chose over an SVM?
