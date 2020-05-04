@@ -1,19 +1,19 @@
 
 # Summer 2020 Curriculum
 
-- as1: Introduction
+- Introduction
   - Data manipulation
   - Solving Simple Linear Systems
-- as2: Autoregressive Models
+- Autoregressive Models
   - Plotting
   - Autoregression
   - Fitting a model
-- as?: More Statistic Inference Methods
+- Classification Models
   - K-Nearest Neighbors
   - Logistic Regression
   - Voting Classifier
   - Random Forest 
-- as?: MNIST Dense Network
+- MNIST Dense Network
   - NN Fundamentals
   - Visualization
   - Linear Algebra
@@ -22,22 +22,22 @@
     - Keras
     - Tensorflow
     - caffe2
-- as?: MNIST Conv2d Network
+- MNIST Conv2d Network
   - Convolution
   - Linear Algebra cont.
-- as?: CUDA and Other Accelorators
+- CUDA and Other Accelorators
   - Compilation
   - Physical Layout of a Graphics Card
   - Host/Device Memory
   - Simple Kernels (saxpy)
   - How these concepts are applied in ML settings
-- as?: Gaussian Procceses
+- Gaussian Procceses
   - Deciding on a kernel
   - Using an accelorator
-- as?: Student Selected Conv2d Network
+- Student Selected Conv2d Network
   - CIFAR10 for example
   - Apply techniques learned in previous conv lessons
-- as?: Student Selected Gaussian Process Model
+- Student Selected Gaussian Process Model
   - Stock market dataset for example
 - Final Project
   - self-selected dataset
