@@ -28,8 +28,9 @@ def print_results(predictions, actual):
               iris_dataset['target_names'][j])
 
     failures = sum(predictions - test_y != 0)
+    print('-' * 30)
     print(f'\nTotal failures: {failures}')
-    print(f'Accuracy: {failures / len(predictions)}')
+    print(f'Accuracy: {1-(failures / len(predictions))}\n\n')
 
 if __name__ == '__main__':
     # Grab 80% of data for training
@@ -40,9 +41,16 @@ if __name__ == '__main__':
     test_x = x[int(len(x)*.8):]
     test_y = y[int(len(y)*.8):]
 
+    ''' SVM '''
     from sklearn import svm
     clf = svm.SVC(gamma=0.001, C=100.)
     clf.fit(train_x, train_y)
     predictions = clf.predict(test_x)
+    print_results(predictions, test_y)
 
+    ''' Ensemble method '''
+    from sklearn.ensemble import AdaBoostClassifier
+    clf = AdaBoostClassifier(n_estimators=100, random_state=0)
+    clf.fit(train_x, train_y)
+    predictions = clf.predict(test_x)
     print_results(predictions, test_y)
