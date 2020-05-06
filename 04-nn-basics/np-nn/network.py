@@ -143,13 +143,3 @@ if __name__ == '__main__':
     print(f'Predictions of the trained network:\ninputs:\n{x.T}\nPredictions:\n{predictions.T}\nLabels:\n{y.T}')
     plt.plot(model.costs)
     plt.show()
-    '''
-    fig, axes = plt.subplots(2)
-    fig.suptitle('Training Results')
-    axes[0].plot(errors)
-    axes[0].set_title('Cost')
-    axes[1].plot(accs)
-    axes[1].set_title('Accuracy')
-    axes[1].set_ylim([0, 100])
-    plt.show()
-    '''
