@@ -1,0 +1,2 @@
+add_executable(ExampleCudaProgram driver.cpp)
+target_link_libraries(ExampleCudaProgram PRIVATE cuda_lib)
