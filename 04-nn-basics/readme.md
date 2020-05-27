@@ -105,7 +105,7 @@ import torch.nn.functional as F
 
 class Network(nn.Module):
     def __init__(self):
-        super(XOR, self).__init__()
+        super(Network, self).__init__()
         self.lin1 = nn.Linear(3, 5)
         self.lin2 = nn.Linear(5, 8)
         self.lin3 = nn.Linear(8, 2)
