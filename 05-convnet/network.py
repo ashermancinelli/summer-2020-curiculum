@@ -96,7 +96,7 @@ class Net(nn.Module):
         x = self.fc1(x)
         x = F.relu(x)
 
-        x = self.fc1(x)
+        x = self.fc2(x)
         x = F.relu(x)
 
         # No activation on final layer
@@ -106,66 +106,71 @@ class Net(nn.Module):
         return x
 
 
-net = Net()
+if __name__ == '__main__':
+    net = Net()
 
-# In our toy network, we used mean squared error. Cross entropy is just
-# another way to calculate the loss. You can play with other cost
-# functions if you like.
-loss_fn = nn.CrossEntropyLoss()
+    # In our toy network, we used mean squared error. Cross entropy is just
+    # another way to calculate the loss. You can play with other cost
+    # functions if you like.
+    loss_fn = nn.CrossEntropyLoss()
 
-'''
-We will use Stochastic Gradient Descent (SGD) for our optimization
-algorithm. I haven't mentioned this until now, but there are other
-optimization algorithms that work much the same way, but may be
-better suited to certain problems. When developing your own networks,
-I reccommend you start with the Adam optimizer. 
+    '''
+    We will use Stochastic Gradient Descent (SGD) for our optimization
+    algorithm. I haven't mentioned this until now, but there are other
+    optimization algorithms that work much the same way, but may be
+    better suited to certain problems. When developing your own networks,
+    I reccommend you start with the Adam optimizer. 
 
-To give you an example of the differences:
-sometimes you want to change your learning rate 
-dynamically depending on the performance of the network.
-Some optimizers handle this differently.
+    To give you an example of the differences:
+    sometimes you want to change your learning rate 
+    dynamically depending on the performance of the network.
+    Some optimizers handle this differently.
 
-We pass in the parameters of our network that can be optimized.
-Each parameter knows how to calculate it's own gradient, and the
-network will handle the backward method, connecting the gradients
-of all it's layers. The optimizer will handle the changes to make to
-the parameters.
-'''
-optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
+    We pass in the parameters of our network that can be optimized.
+    Each parameter knows how to calculate it's own gradient, and the
+    network will handle the backward method, connecting the gradients
+    of all it's layers. The optimizer will handle the changes to make to
+    the parameters.
+    '''
+    optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 
-# Here we loop over the dataset more than once.
-for epoch in range(2):
+    # Here we loop over the dataset more than once.
+    for epoch in range(2):
 
-    running_loss = 0.0
-    for i, data in enumerate(trainloader, 0):
+        running_loss = 0.0
+        for i, data in enumerate(trainloader, 0):
 
-        # get the inputs; data is a list of [inputs, labels]
-        inputs, labels = data
+            # get the inputs; data is a list of [inputs, labels]
+            inputs, labels = data
 
-        # zero the parameter gradients from the previoius training
-        # session
-        optimizer.zero_grad()
+            # zero the parameter gradients from the previoius training
+            # session
+            optimizer.zero_grad()
 
-        '''
-        calling net(inputs) like this is how we do a forward-pass
-        on our network. then, we calculate our loss with our loss function.
-        After that, we call backward on the loss, which will then call backward on
-        each layer of our network to calculate the gradients.
+            '''
+            calling net(inputs) like this is how we do a forward-pass
+            on our network. then, we calculate our loss with our loss function.
+            After that, we call backward on the loss, which will then call backward on
+            each layer of our network to calculate the gradients.
 
-        We then call .step() on our optimizer, which will apply the gradients
-        to the parameters of our network, among other things.
-        '''
-        outputs = net(inputs)
-        loss = loss_fn(outputs, labels)
-        loss.backward()
-        optimizer.step()
+            We then call .step() on our optimizer, which will apply the gradients
+            to the parameters of our network, among other things.
+            '''
+            outputs = net(inputs)
+            loss = loss_fn(outputs, labels)
+            loss.backward()
+            optimizer.step()
 
-        # print statistics
-        running_loss += loss.item() # .item() grabs the scalar value from a pytorch tensor
-        if i % 2000 == 1999:    # print every 2000 mini-batches
+            # print statistics
+            running_loss += loss.item() # .item() grabs the scalar value from a pytorch tensor
+            if i % 2000 == 1999:    # print every 2000 mini-batches
 
-            print('[%d, %5d] loss: %.3f' %
-                  (epoch + 1, i + 1, running_loss / 2000))
-            running_loss = 0.0
+                print('[%d, %5d] loss: %.3f' %
+                      (epoch + 1, i + 1, running_loss / 2000))
+                running_loss = 0.0
 
-print('Finished Training')
+    print('Finished Training')
+
+    # Here we save the network to a file for use elsewhere
+    torch.save(net.state_dict(), './network-state')
+    

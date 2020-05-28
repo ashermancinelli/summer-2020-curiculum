@@ -47,3 +47,37 @@ This reduces the size of a matrix by pooling elements together, as seen in the d
 Pooling is a form a downsampling to reduce the size of the data that the network
 must keep in memory.
 This does not change the performance of the network much, so it's very useful in increasing the performance of our network.
+
+Please find further instruction in the python scripts in this directory.
+The order you ought to look through the scripts is:
+
+1. `./cifar10.py`
+2. `./network.py`
+3. `./evaluate_network.py`
+
+Problems
+---
+
+1. Why do we use pooling layers?
+    - Could you trian a network without pooling layers?
+    - What parameters of the convolutional layers might you want to adjust if you were not to use pooling layers?
+    - Do a bit of research to figure out why almost all convolutional networks used today use pooling layers
+2. What would you change about the network if you were to feed it 4-channel images (RBGA for red, blue, gree, and alpha for transparancy)?
+3. How would you train a network with a dataset that contains images of different sizes?
+4. Train a network on the Fashion-MNIST dataset.
+    - This dataset is composed of grascale images (so only one channel) which should make the problem a bit easier
+    - There are thousands of images broken up into the following classes:
+        - T-shirt/top
+        - Trouser
+        - Pullover
+        - Dress
+        - Coat
+        - Sandal
+        - Shirt
+        - Sneaker
+        - Bag
+        - Ankle boot
+    - PyTorch has a datset loader for Fashion-MNIST just like with CIFAR10: `torchvision.datasets.FashionMNIST`
+5. If you did not have much trouble with Fashion-MNIST, attempt to train a network on this [architectural dataset](https://old.datahub.io/dataset/architectural-heritage-elements-image-dataset)
+    - You're lucky enough to have a datset with images all of the same sizes, however there is also a version of this dataset at the link above which has not normalized the shapes of the images. If you're feeling really ambitious, attempt to create a dataset loader for this image dataset which reshapes all the images to work in your network.
+        
