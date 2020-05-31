@@ -62,4 +62,22 @@ Perhaps a simple decision tree or k-means classifier would be able to classify t
 Hopefully you now see the power and importance of feature engineering.
 This skill could save your organization thousands of dollars on compute resources!
 
+If we do have the resources however, we may engineer our data further.
+This is why we will not use the peaks of the FFT as our data input for this model, but keep the principle of reducing the problem domain as much as possible in mind.
+By using the FFT, we lost the time domain to gain valuable information in the frequency domain.
+If we have the resources to train a large convolutional network, we could extend our data to contain time, frequency, and magnitude in our dataset.
+This way, we are only looking at the most valuable information contained in the data, and extending the 2d audio data into 3d makes our data feel more like an image problem.
+
+![Spectrogram](./readme_images/example_spectrogram.png)
+
+Looking at the spectrogram of our data, we can see that the most intense audio waves occur at very low frequencies and only at the beginning of the audio sample.
+It seems that we have all of the information we need to train a very robust network!
+
+Let us now look at the full picture:
+
+![Full Example](./readme_images/example_full_feature_engineering.png)
+
+A convolutional network trained on the spectrogram data as would learn to recognize patterns in the the time, frequency, and intensity dimensions, which is exactly what we want for audio data that is time, intensity, and frequency dependent.
+We are now ready to train a network on these data.
+
 Assuming you've already downloaded the dataset for this lesson, please proceed to `viz.py` to take a look at the dataset.
