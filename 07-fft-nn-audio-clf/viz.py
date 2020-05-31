@@ -14,14 +14,18 @@ else:
 
 # Visualize the FFT of a single audio file
 def fftplot(audio, sr):
+	print(audio)
 	N = len(audio)
 	T = 1/sr
-	y = scipy.fft.fft(audio)
+	yf = scipy.fft.fft(audio)
+	y = 2./N * np.abs(yf[:N//2])
 	x = np.linspace(0., 1/(2*T), N//2)
-	print(x.shape, y.shape)
-	peaks = np.sort(np.abs(y[:N//2]))[:]
-	print(peaks)
-	plt.plot(x, 2./N * np.abs(y[:N//2]))
+
+	peaks, _ = scipy.signal.find_peaks(y, height=.0012)
+	# plt.plot(x, y)
+	plt.plot(y)
+	plt.plot(peaks, y[peaks], 'x')
+	print(np.sort(y[peaks]))
 	plt.grid()
 	plt.xlabel('Frequency')
 	plt.ylabel('Magnitude')
