@@ -18,8 +18,7 @@ else:
 # Visualize the FFT of a single audio file
 def fftplot(audio: np.ndarray,
             sr: int,
-            ax: matplotlib.pyplot.Axes = None
-            ) -> None:
+            ax: matplotlib.pyplot.Axes=None) -> None:
     if ax is None:
         ax = plt
         fig, (ax0, ax1) = ax.subplots(nrows=2)
@@ -42,8 +41,11 @@ def fftplot(audio: np.ndarray,
     ax0.set_ylabel('Magnitude')
     ax0.set_title('FFT With Peaks')
 
+    '''
     frequencies, times, spectrogram = scipy.signal.spectrogram(y, T)
     ax1.pcolormesh(times, frequencies, spectrogram)
+    '''
+    ax1.specgram(audio, Fs=sr)
     ax1.set_title('Spectrogram')
     ax1.set_ylabel('Frequency [Hz]')
     ax1.set_xlabel('Time [sec]')
@@ -51,7 +53,9 @@ def fftplot(audio: np.ndarray,
 
 if __name__ == '__main__':
     for fn in filenames:
+        print('Plotting data from ', fn)
         samples, sampling_rate = librosa.load(fn)
+
         # Plot the raw data
         fig = plt.figure()
         gs = fig.add_gridspec(2, 2)
@@ -64,6 +68,7 @@ if __name__ == '__main__':
         ax0.set_ylabel('Amplitude')
         ax0.set_title('Raw Audio Data')
         
+        # Plot the fft and spectrogram
         fftplot(samples, sampling_rate, ax=[ax1, ax2])
         plt.show()
 

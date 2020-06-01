@@ -17,7 +17,7 @@ This involves deciding which features are relevant, and therefor which features 
 In other words, ***feature engineering constrains the domain over which we intend to model***.
 If we can simplify the problem domain, we can simplify the model, reduce the required resources, and increase the probability that our model will fit the data well.
 Sometimes, the features of very complex dataset (which would normally require a very deep neural network on powerful hardware to fit) can be engineered to the extent that a much smaller and less computationally expensive model may be better suited.
-For example, let us look at a single audio sample:
+For example, let us look at a single audio sample (found in UrbanSound8K/audio/fold5/104998-7-7-0.wav):
 
 ![./UrbanSound8K/audio/fold5/104998-7-7-0.wav raw](./readme_images/example_raw.png)
 
