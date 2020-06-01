@@ -80,4 +80,5 @@ Let us now look at the full picture:
 A convolutional network trained on the spectrogram data as would learn to recognize patterns in the the time, frequency, and intensity dimensions, which is exactly what we want for audio data that is time, intensity, and frequency dependent.
 We are now ready to train a network on these data.
 
-Assuming you've already downloaded the dataset for this lesson, please proceed to `viz.py` to take a look at the dataset.
+Please take a look at `viz.py` in this directory to ensure you are familiar enough with the operations used to find the FFTs and spectrograms of an audio sample.
+Do not fret if you don't understand all the plotting operations as these will not be critical to training a network.
